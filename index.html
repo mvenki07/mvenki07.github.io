@@ -24,7 +24,6 @@
     }
 
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text);
@@ -43,18 +42,9 @@
       display: flex; align-items: center; justify-content: space-between;
       height: 56px;
     }
-    .nav-brand {
-      font-weight: 700; font-size: 1rem; color: var(--text);
-      letter-spacing: -.02em;
-      text-decoration: none;
-    }
+    .nav-brand { font-weight: 700; font-size: 1rem; color: var(--text); letter-spacing: -.02em; text-decoration: none; }
     .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none; color: var(--muted);
-      font-size: .82rem; font-weight: 500;
-      transition: color .2s;
-      letter-spacing: .02em; text-transform: uppercase;
-    }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: .82rem; font-weight: 500; transition: color .2s; letter-spacing: .02em; text-transform: uppercase; }
     .nav-links a:hover { color: var(--accent); }
 
     /* ── HERO ── */
@@ -70,52 +60,56 @@
       width: 400px; height: 400px;
       background: radial-gradient(circle, rgba(14,165,233,.12) 0%, transparent 70%);
       pointer-events: none;
+      animation: pulseGlow 6s ease-in-out infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.15); opacity: .7; }
     }
     .hero-avatar {
-      width: 88px; height: 88px;
-      border-radius: 50%;
+      width: 88px; height: 88px; border-radius: 50%;
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1.5rem;
       font-size: 2rem; font-weight: 700; color: #fff;
       box-shadow: 0 8px 24px rgba(14,165,233,.35);
       letter-spacing: -.03em;
+      animation: avatarPop .6s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    @keyframes avatarPop {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
     }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2rem, 5vw, 3rem);
-      color: var(--text);
-      letter-spacing: -.02em;
-      margin-bottom: .5rem;
+      color: var(--text); letter-spacing: -.02em; margin-bottom: .5rem;
+      animation: slideUp .6s .2s ease both;
     }
     .hero-tagline {
-      font-size: .95rem; color: var(--muted);
-      max-width: 560px; margin: 0 auto .25rem;
-      font-weight: 400;
+      font-size: .95rem; color: var(--muted); max-width: 560px; margin: 0 auto .25rem;
+      animation: slideUp .6s .35s ease both;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(24px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
     }
     .hero-meta {
       display: flex; align-items: center; justify-content: center;
       gap: 1.25rem; margin-top: 1.5rem; flex-wrap: wrap;
+      animation: slideUp .6s .45s ease both;
     }
-    .hero-meta a {
-      display: flex; align-items: center; gap: .4rem;
-      color: var(--accent); text-decoration: none;
-      font-size: .85rem; font-weight: 500;
-      transition: color .2s;
-    }
+    .hero-meta a { display: flex; align-items: center; gap: .4rem; color: var(--accent); text-decoration: none; font-size: .85rem; font-weight: 500; transition: color .2s; }
     .hero-meta a:hover { color: var(--accent-dark); }
     .hero-meta .sep { color: var(--border); font-size: 1.2rem; }
     .hero-badges {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: .5rem; margin-top: 1.75rem;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-top: 1.75rem;
+      animation: slideUp .6s .55s ease both;
     }
     .badge {
-      background: var(--accent-light);
-      color: var(--accent-dark);
-      font-size: .75rem; font-weight: 600;
-      padding: .3rem .75rem;
-      border-radius: 999px;
-      letter-spacing: .02em;
+      background: var(--accent-light); color: var(--accent-dark);
+      font-size: .75rem; font-weight: 600; padding: .3rem .75rem;
+      border-radius: 999px; letter-spacing: .02em;
     }
 
     /* ── LAYOUT ── */
@@ -126,133 +120,150 @@
     .section-label {
       display: inline-flex; align-items: center; gap: .5rem;
       font-size: .7rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 1rem;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
     }
-    .section-label::before {
-      content: ''; display: block;
-      width: 18px; height: 2px; background: var(--accent);
-      border-radius: 2px;
-    }
-    h2 {
-      font-size: 1.5rem; font-weight: 700; color: var(--text);
-      letter-spacing: -.02em; margin-bottom: 1.5rem;
-    }
+    .section-label::before { content: ''; display: block; width: 18px; height: 2px; background: var(--accent); border-radius: 2px; }
+    h2 { font-size: 1.5rem; font-weight: 700; color: var(--text); letter-spacing: -.02em; margin-bottom: 1.5rem; }
 
     /* ── SUMMARY ── */
-    .summary-text {
-      font-size: 1.02rem; color: var(--text);
-      line-height: 1.75; max-width: 740px;
-    }
-    .summary-stats {
-      display: flex; gap: 2rem; flex-wrap: wrap;
-      margin-top: 2rem;
-    }
+    .summary-text { font-size: 1.02rem; color: var(--text); line-height: 1.75; max-width: 740px; }
+    .summary-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
     .stat {
       text-align: center;
       background: var(--bg-alt); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1rem 1.5rem;
-      min-width: 110px;
+      border-radius: var(--radius); padding: 1rem 1.5rem; min-width: 110px;
+      opacity: 0; transform: translateY(20px) scale(.95);
+      transition: opacity .5s ease, transform .5s ease, box-shadow .2s;
     }
+    .stat.visible { opacity: 1; transform: translateY(0) scale(1); }
+    .stat:hover { box-shadow: var(--shadow); }
+    .stat:nth-child(1) { transition-delay: .0s; }
+    .stat:nth-child(2) { transition-delay: .08s; }
+    .stat:nth-child(3) { transition-delay: .16s; }
+    .stat:nth-child(4) { transition-delay: .24s; }
+    .stat:nth-child(5) { transition-delay: .32s; }
     .stat-num {
       font-size: 1.75rem; font-weight: 700; color: var(--accent);
       letter-spacing: -.04em; display: block;
     }
-    .stat-label {
-      font-size: .72rem; color: var(--muted);
-      font-weight: 500; text-transform: uppercase; letter-spacing: .05em;
-      margin-top: .2rem;
-    }
+    .stat-label { font-size: .72rem; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .05em; margin-top: .2rem; }
 
     /* ── SKILLS ── */
     .skills-grid { display: flex; flex-direction: column; gap: 1rem; }
     .skill-row {
       display: flex; gap: 1rem; align-items: flex-start;
       padding: 1rem 1.25rem;
-      background: var(--bg-alt); border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: box-shadow .2s;
+      background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--radius);
+      opacity: 0; transform: translateX(-28px);
+      transition: opacity .45s ease, transform .45s ease, box-shadow .2s;
     }
+    .skill-row.visible { opacity: 1; transform: translateX(0); }
     .skill-row:hover { box-shadow: var(--shadow); }
+    .skill-row:nth-child(1) { transition-delay: .00s; }
+    .skill-row:nth-child(2) { transition-delay: .07s; }
+    .skill-row:nth-child(3) { transition-delay: .14s; }
+    .skill-row:nth-child(4) { transition-delay: .21s; }
+    .skill-row:nth-child(5) { transition-delay: .28s; }
+
     .skill-category {
       font-size: .78rem; font-weight: 700; color: var(--accent);
       min-width: 140px; padding-top: .15rem;
       text-transform: uppercase; letter-spacing: .04em;
+      position: relative;
+      background: linear-gradient(90deg, var(--accent) 0%, #38bdf8 50%, var(--accent-dark) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmerText 4s linear infinite;
+      animation-play-state: paused;
     }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .skill-tag {
-      background: #fff; border: 1px solid var(--border);
-      color: var(--text); font-size: .78rem; font-weight: 500;
-      padding: .2rem .6rem; border-radius: 6px;
+    .skill-row.visible .skill-category { animation-play-state: running; }
+    @keyframes shimmerText {
+      0%   { background-position: 0%   center; }
+      100% { background-position: 200% center; }
     }
 
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .skill-tag { background: #fff; border: 1px solid var(--border); color: var(--text); font-size: .78rem; font-weight: 500; padding: .2rem .6rem; border-radius: 6px; }
+
     /* ── EXPERIENCE ── */
-    .company-header {
-      display: flex; align-items: flex-start;
-      justify-content: space-between; flex-wrap: wrap;
-      gap: .5rem; margin-bottom: .25rem;
-    }
+    .company-header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: .5rem; margin-bottom: .25rem; }
     .company-name {
       font-size: 1.05rem; font-weight: 700; color: var(--text);
+      opacity: 0; transform: translateY(14px);
+      transition: opacity .4s ease, transform .4s ease;
     }
-    .company-dates {
-      font-size: .82rem; color: var(--muted);
-      font-weight: 400; white-space: nowrap;
-    }
+    .company-name.visible { opacity: 1; transform: translateY(0); }
+
+    .company-dates { font-size: .82rem; color: var(--muted); font-weight: 400; white-space: nowrap; }
     .role-list { margin: .25rem 0 1.25rem 0; }
     .role-item {
-      font-size: .82rem; color: var(--muted);
-      font-style: italic; padding: .1rem 0;
+      font-size: .82rem; color: var(--muted); font-style: italic; padding: .1rem 0;
+      opacity: 0; transform: translateX(-12px);
+      transition: opacity .35s ease, transform .35s ease;
     }
+    .role-item.visible { opacity: 1; transform: translateX(0); }
+    .role-item:nth-child(1) { transition-delay: .05s; }
+    .role-item:nth-child(2) { transition-delay: .10s; }
+    .role-item:nth-child(3) { transition-delay: .15s; }
+    .role-item:nth-child(4) { transition-delay: .20s; }
+
     .bullets { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem; }
     .bullet-card {
       border-left: 3px solid var(--accent-light);
       padding: .85rem 1rem;
       border-radius: 0 var(--radius) var(--radius) 0;
       background: var(--bg-alt);
-      transition: border-color .2s, box-shadow .2s;
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .4s ease, transform .4s ease, border-color .2s, box-shadow .2s;
     }
-    .bullet-card:hover {
-      border-left-color: var(--accent);
-      box-shadow: var(--shadow);
-    }
+    .bullet-card.visible { opacity: 1; transform: translateY(0); }
+    .bullet-card:hover { border-left-color: var(--accent); box-shadow: var(--shadow); }
+    .bullet-card:nth-child(1) { transition-delay: .00s; }
+    .bullet-card:nth-child(2) { transition-delay: .06s; }
+    .bullet-card:nth-child(3) { transition-delay: .12s; }
+    .bullet-card:nth-child(4) { transition-delay: .18s; }
+    .bullet-card:nth-child(5) { transition-delay: .24s; }
+    .bullet-card:nth-child(6) { transition-delay: .30s; }
+    .bullet-card:nth-child(7) { transition-delay: .36s; }
+
     .bullet-title {
       font-size: .85rem; font-weight: 700; color: var(--accent-dark);
-      text-transform: uppercase; letter-spacing: .04em;
-      margin-bottom: .35rem;
+      text-transform: uppercase; letter-spacing: .04em; margin-bottom: .35rem;
+      position: relative; display: inline-block;
     }
+    .bullet-title::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 2px;
+      background: linear-gradient(90deg, var(--accent), #38bdf8);
+      border-radius: 2px;
+      transition: width .5s .2s ease;
+    }
+    .bullet-card.visible .bullet-title::after { width: 100%; }
+
     .bullet-text { font-size: .88rem; color: var(--text); line-height: 1.65; }
 
     .past-company {
       margin-top: 2rem; padding: 1.25rem;
-      border: 1px solid var(--border); border-radius: var(--radius);
-      background: var(--bg-alt);
+      border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-alt);
+      opacity: 0; transform: translateY(18px);
+      transition: opacity .4s ease, transform .4s ease;
     }
+    .past-company.visible { opacity: 1; transform: translateY(0); }
     .past-role { font-style: italic; color: var(--muted); font-size: .82rem; margin-bottom: .5rem; }
     .past-bullets { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-top: .75rem; }
-    .past-bullets li {
-      font-size: .85rem; color: var(--text);
-      padding-left: 1rem; position: relative; line-height: 1.6;
-    }
-    .past-bullets li::before {
-      content: '→'; position: absolute; left: 0;
-      color: var(--accent); font-size: .75rem; top: .05rem;
-    }
+    .past-bullets li { font-size: .85rem; color: var(--text); padding-left: 1rem; position: relative; line-height: 1.6; }
+    .past-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: .75rem; top: .05rem; }
 
     /* ── EDUCATION ── */
     .edu-grid { display: flex; flex-direction: column; gap: 1rem; }
     .edu-card {
       display: flex; gap: 1rem; align-items: flex-start;
-      padding: 1rem 1.25rem;
-      border: 1px solid var(--border); border-radius: var(--radius);
-      background: var(--bg-alt);
+      padding: 1rem 1.25rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-alt);
     }
-    .edu-icon {
-      width: 40px; height: 40px; border-radius: 8px;
-      background: var(--accent-light);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-    }
+    .edu-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
     .edu-school { font-weight: 700; font-size: .92rem; color: var(--text); }
     .edu-degree { font-size: .82rem; color: var(--muted); margin-top: .15rem; }
 
@@ -260,60 +271,43 @@
     .patents-list { display: flex; flex-direction: column; gap: .65rem; }
     .patent-item {
       display: flex; gap: .75rem; align-items: flex-start;
-      padding: .75rem 1rem;
-      border: 1px solid var(--border); border-radius: var(--radius);
-      background: var(--bg-alt);
-      transition: box-shadow .2s;
+      padding: .75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-alt);
+      opacity: 0; transform: translateX(-20px);
+      transition: opacity .4s ease, transform .4s ease, box-shadow .2s;
     }
+    .patent-item.visible { opacity: 1; transform: translateX(0); }
     .patent-item:hover { box-shadow: var(--shadow); }
-    .patent-icon {
-      width: 28px; height: 28px; border-radius: 6px;
-      background: var(--accent-light);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-size: .85rem;
-    }
+    .patent-item:nth-child(1) { transition-delay: .00s; }
+    .patent-item:nth-child(2) { transition-delay: .06s; }
+    .patent-item:nth-child(3) { transition-delay: .12s; }
+    .patent-item:nth-child(4) { transition-delay: .18s; }
+    .patent-item:nth-child(5) { transition-delay: .24s; }
+    .patent-item:nth-child(6) { transition-delay: .30s; }
+    .patent-item:nth-child(7) { transition-delay: .36s; }
+
+    .patent-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: .85rem; }
     .patent-title { font-size: .86rem; font-weight: 500; color: var(--text); line-height: 1.5; }
-    .patent-num {
-      font-size: .72rem; color: var(--accent);
-      font-weight: 600; margin-top: .15rem; font-family: monospace;
-    }
+    .patent-num { font-size: .72rem; color: var(--accent); font-weight: 600; margin-top: .15rem; font-family: monospace; }
 
     /* ── PUBLICATIONS ── */
     .pub-list { display: flex; flex-direction: column; gap: .75rem; }
     .pub-card {
       display: flex; gap: .75rem; align-items: center;
-      padding: .9rem 1.1rem;
-      border: 1px solid var(--border); border-radius: var(--radius);
-      background: var(--bg-alt);
+      padding: .9rem 1.1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-alt);
       text-decoration: none; color: inherit;
       transition: box-shadow .2s, border-color .2s;
     }
-    .pub-card:hover {
-      box-shadow: var(--shadow);
-      border-color: var(--accent);
-    }
-    .pub-icon {
-      width: 36px; height: 36px; border-radius: 8px;
-      background: var(--accent-light);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; font-size: 1rem;
-    }
+    .pub-card:hover { box-shadow: var(--shadow); border-color: var(--accent); }
+    .pub-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; }
     .pub-title { font-size: .88rem; font-weight: 600; color: var(--text); line-height: 1.5; }
     .pub-link { font-size: .75rem; color: var(--accent); margin-top: .1rem; }
 
     /* ── FOOTER ── */
-    footer {
-      text-align: center; padding: 2.5rem 1rem;
-      background: var(--bg-alt); border-top: 1px solid var(--border);
-      font-size: .8rem; color: var(--muted);
-    }
+    footer { text-align: center; padding: 2.5rem 1rem; background: var(--bg-alt); border-top: 1px solid var(--border); font-size: .8rem; color: var(--muted); }
     footer a { color: var(--accent); text-decoration: none; }
 
-    /* ── ANIMATIONS ── */
-    .fade-in {
-      opacity: 0; transform: translateY(20px);
-      transition: opacity .5s ease, transform .5s ease;
-    }
+    /* ── GENERIC FADE-IN ── */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* ── RESPONSIVE ── */
@@ -324,7 +318,6 @@
       .nav-links { display: none; }
     }
 
-    /* ── PRINT ── */
     @media print {
       nav, .hero-badges { display: none; }
       section { padding: 24px 0; }
@@ -390,20 +383,20 @@
       and delivering AI-powered experiences.
     </p>
     <div class="summary-stats">
-      <div class="stat"><span class="stat-num">25+</span><span class="stat-label">Years Exp.</span></div>
-      <div class="stat"><span class="stat-num">7</span><span class="stat-label">Patents</span></div>
-      <div class="stat"><span class="stat-num">1000+</span><span class="stat-label">Engineers Served</span></div>
-      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Tax Peak Uptime</span></div>
-      <div class="stat"><span class="stat-num">2</span><span class="stat-label">Publications</span></div>
+      <div class="stat" data-target="25" data-suffix="+"><span class="stat-num">0</span><span class="stat-label">Years Exp.</span></div>
+      <div class="stat" data-target="7"  data-suffix=""><span class="stat-num">0</span><span class="stat-label">Patents</span></div>
+      <div class="stat" data-target="1000" data-suffix="+"><span class="stat-num">0</span><span class="stat-label">Engineers Served</span></div>
+      <div class="stat" data-target="100" data-suffix="%"><span class="stat-num">0</span><span class="stat-label">Tax Peak Uptime</span></div>
+      <div class="stat" data-target="2"  data-suffix=""><span class="stat-num">0</span><span class="stat-label">Publications</span></div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
-  <div class="container fade-in">
-    <div class="section-label">Expertise</div>
-    <h2>Technical Skills</h2>
+  <div class="container">
+    <div class="section-label fade-in">Expertise</div>
+    <h2 class="fade-in">Technical Skills</h2>
     <div class="skills-grid">
       <div class="skill-row">
         <span class="skill-category">Architecture &amp; Platforms</span>
@@ -467,11 +460,10 @@
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="container fade-in">
-    <div class="section-label">Career</div>
-    <h2>Experience</h2>
+  <div class="container">
+    <div class="section-label fade-in">Career</div>
+    <h2 class="fade-in">Experience</h2>
 
-    <!-- INTUIT -->
     <div class="company-header">
       <span class="company-name">Intuit Inc., Mountain View, CA</span>
       <span class="company-dates">Aug 2000 – Present</span>
@@ -513,7 +505,6 @@
       </div>
     </div>
 
-    <!-- DAY-TIMER -->
     <div class="past-company">
       <div class="company-header">
         <span class="company-name">Day-Timer Inc. (ACCO Brands), CA, USA</span>
@@ -525,7 +516,6 @@
       </ul>
     </div>
 
-    <!-- NIC -->
     <div class="past-company">
       <div class="company-header">
         <span class="company-name">National Informatics Center (Government of India)</span>
@@ -537,7 +527,6 @@
       </ul>
     </div>
 
-    <!-- BAY TALKITEC -->
     <div class="past-company">
       <div class="company-header">
         <span class="company-name">Bay Talkitec (P) Ltd., Chennai, India</span>
@@ -549,7 +538,6 @@
         <li>Designed and developed a full-featured visual audio editing software for the digitized voice data, saving several hours of manual audio editing.</li>
       </ul>
     </div>
-
   </div>
 </section>
 
@@ -579,58 +567,37 @@
 
 <!-- PATENTS -->
 <section id="patents">
-  <div class="container fade-in">
-    <div class="section-label">Intellectual Property</div>
-    <h2>Patents</h2>
+  <div class="container">
+    <div class="section-label fade-in">Intellectual Property</div>
+    <h2 class="fade-in">Patents</h2>
     <div class="patents-list">
       <div class="patent-item">
         <div class="patent-icon">⚡</div>
-        <div>
-          <div class="patent-title">MCP federation for distributed MCP servers</div>
-          <div class="patent-num">Patent Pending</div>
-        </div>
+        <div><div class="patent-title">MCP federation for distributed MCP servers</div><div class="patent-num">Patent Pending</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">🤖</div>
-        <div>
-          <div class="patent-title">AI Driven Runtime User Experience Routing</div>
-          <div class="patent-num">Patent Pending</div>
-        </div>
+        <div><div class="patent-title">AI Driven Runtime User Experience Routing</div><div class="patent-num">Patent Pending</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">🛡️</div>
-        <div>
-          <div class="patent-title">High resiliency content delivery network backup mechanism for micro frontend web applications</div>
-          <div class="patent-num">US11411800B1</div>
-        </div>
+        <div><div class="patent-title">High resiliency content delivery network backup mechanism for micro frontend web applications</div><div class="patent-num">US11411800B1</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">📋</div>
-        <div>
-          <div class="patent-title">Method and system for data-driven checklist sharing</div>
-          <div class="patent-num">US09444860</div>
-        </div>
+        <div><div class="patent-title">Method and system for data-driven checklist sharing</div><div class="patent-num">US09444860</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">📊</div>
-        <div>
-          <div class="patent-title">Unified usage tracking mechanism for application</div>
-          <div class="patent-num">US8949865B1</div>
-        </div>
+        <div><div class="patent-title">Unified usage tracking mechanism for application</div><div class="patent-num">US8949865B1</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">🔍</div>
-        <div>
-          <div class="patent-title">Filtered list assisted element selection</div>
-          <div class="patent-num">US7756886</div>
-        </div>
+        <div><div class="patent-title">Filtered list assisted element selection</div><div class="patent-num">US7756886</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">💱</div>
-        <div>
-          <div class="patent-title">Associating a foreign currency with an accounting object</div>
-          <div class="patent-num">US20100082461</div>
-        </div>
+        <div><div class="patent-title">Associating a foreign currency with an accounting object</div><div class="patent-num">US20100082461</div></div>
       </div>
     </div>
   </div>
@@ -666,12 +633,40 @@
 </footer>
 
 <script>
-  // Scroll fade-in
-  const observer = new IntersectionObserver(
-    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0.1 }
-  );
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  // ── Unified IntersectionObserver ──
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.classList.add('visible');
+
+      // Counter animation for stat cards
+      if (el.classList.contains('stat')) {
+        const numEl  = el.querySelector('.stat-num');
+        const target = parseInt(el.dataset.target, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1200;
+        const start = performance.now();
+        const easeOut = t => 1 - Math.pow(1 - t, 3);
+        const tick = now => {
+          const progress = Math.min((now - start) / duration, 1);
+          numEl.textContent = Math.round(easeOut(progress) * target) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+
+      io.unobserve(el);
+    });
+  }, { threshold: 0.15 });
+
+  // Observe all animated elements
+  const selectors = [
+    '.fade-in', '.stat', '.skill-row',
+    '.company-name', '.role-item', '.bullet-card',
+    '.past-company', '.patent-item'
+  ];
+  document.querySelectorAll(selectors.join(',')).forEach(el => io.observe(el));
 </script>
 
 </body>
