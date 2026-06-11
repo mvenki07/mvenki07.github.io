@@ -68,12 +68,10 @@
     }
     .hero-avatar {
       width: 88px; height: 88px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-      display: flex; align-items: center; justify-content: center;
+      display: block; object-fit: cover;
       margin: 0 auto 1.5rem;
-      font-size: 2rem; font-weight: 700; color: #fff;
+      border: 3px solid rgba(255,255,255,.85);
       box-shadow: 0 8px 24px rgba(14,165,233,.35);
-      letter-spacing: -.03em;
       animation: avatarPop .6s cubic-bezier(.34,1.56,.64,1) both;
     }
     @keyframes avatarPop {
@@ -340,7 +338,7 @@
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-avatar">VM</div>
+  <img class="hero-avatar" src="assets/profile.jpg" alt="VM">
   <h1>Venkatesan Murugesan</h1>
   <p class="hero-tagline">Architect / Principal Engineer &nbsp;·&nbsp; Large-Scale UX Platforms &nbsp;·&nbsp; Patented AI Innovations &nbsp;·&nbsp; Agentic AI Platform Integrations</p>
   <div class="hero-meta">
