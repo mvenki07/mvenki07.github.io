@@ -225,6 +225,7 @@
     .bullet-card:nth-child(5) { transition-delay: .24s; }
     .bullet-card:nth-child(6) { transition-delay: .30s; }
     .bullet-card:nth-child(7) { transition-delay: .36s; }
+    .bullet-card:nth-child(8) { transition-delay: .42s; }
 
     .bullet-title {
       font-size: .85rem; font-weight: 700; color: var(--accent-dark);
@@ -283,6 +284,7 @@
     .patent-item:nth-child(6) { transition-delay: .30s; }
     .patent-item:nth-child(7) { transition-delay: .36s; }
     .patent-item:nth-child(8) { transition-delay: .42s; }
+    .patent-item:nth-child(9) { transition-delay: .48s; }
 
     .patent-icon { width: 28px; height: 28px; border-radius: 6px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: .85rem; }
     .patent-title { font-size: .86rem; font-weight: 500; color: var(--text); line-height: 1.5; }
@@ -341,7 +343,7 @@
 <header class="hero">
   <img class="hero-avatar" src="assets/profile.jpg" alt="VM">
   <h1>Venkatesan Murugesan</h1>
-  <p class="hero-tagline">Architect / Principal Engineer &nbsp;·&nbsp; Patented AI Innovations &nbsp;·&nbsp; Large-Scale UX &amp; Agentic Platforms</p>
+  <p class="hero-tagline">Architect / Principal Engineer &nbsp;·&nbsp; Patented AI Innovations &nbsp;·&nbsp; Large-Scale UX &amp; AI Agentic Platforms</p>
   <div class="hero-meta">
     <a href="https://www.linkedin.com/in/mvenki/" target="_blank" rel="noopener">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -349,7 +351,7 @@
     </a>
   </div>
   <div class="hero-badges">
-    <span class="badge">8 Patents</span>
+    <span class="badge">9 Patents</span>
     <span class="badge">2 Publications</span>
     <span class="badge">26+ Years Experience</span>
     <span class="badge">MCP / Agentic AI</span>
@@ -369,12 +371,12 @@
       and for ChatGPT &amp; Claude integrations enabling rapid development of conversational financial insights for SMB and
       Enterprise customers. Architect of multi-tenant UX platform serving 1000+ engineers and
       millions of customers globally.
-      8 patents, 2 publications. Proven expertise: scaling to 100% Tax peak-season availability,
-      mentoring distributed global teams, and delivering AI-powered experiences.
+      9 patents, 2 publications. Proven expertise: platform scaling to 100% Tax peak-season availability,
+      delivering AI-powered experiences &mdash; while hiring and mentoring distributed global engineering teams.
     </p>
     <div class="summary-stats">
       <div class="stat" data-target="26" data-suffix="+"><span class="stat-num">0</span><span class="stat-label">Years Exp.</span></div>
-      <div class="stat" data-target="8"  data-suffix=""><span class="stat-num">0</span><span class="stat-label">Patents</span></div>
+      <div class="stat" data-target="9"  data-suffix=""><span class="stat-num">0</span><span class="stat-label">Patents</span></div>
       <div class="stat" data-target="1000" data-suffix="+"><span class="stat-num">0</span><span class="stat-label">Engineers Served</span></div>
       <div class="stat" data-target="100" data-suffix="%"><span class="stat-num">0</span><span class="stat-label">Tax Peak Uptime</span></div>
       <div class="stat" data-target="2"  data-suffix=""><span class="stat-num">0</span><span class="stat-label">Publications</span></div>
@@ -421,6 +423,8 @@
           <span class="skill-tag">Lambda</span>
           <span class="skill-tag">OpenTelemetry</span>
           <span class="skill-tag">Argo</span>
+          <span class="skill-tag">AuthN</span>
+          <span class="skill-tag">AuthZ</span>
         </div>
       </div>
       <div class="skill-row">
@@ -482,7 +486,7 @@
       </div>
       <div class="bullet-card">
         <div class="bullet-title">Intuit UX Platform Architecture</div>
-        <p class="bullet-text">Architected and led an 8-engineer team to deliver Intuit's multi-tenant micro-frontend platform serving 1000+ engineers across QuickBooks and TurboTax, cutting app creation/releases from days to minutes and standardizing Experimentation, Personalization, CI/CD, resiliency, and observability across hundreds of apps.</p>
+        <p class="bullet-text">Architected and led an 8-engineer team to deliver Intuit's multi-tenant micro-frontend platform serving 1000+ engineers across QuickBooks and TurboTax, cutting app creation/releases from days to minutes and standardizing Experimentation, Personalization, Security, Compliance, CI/CD, resiliency, and observability across hundreds of apps.</p>
       </div>
       <div class="bullet-card">
         <div class="bullet-title">Resiliency and Scale</div>
@@ -498,7 +502,11 @@
       </div>
       <div class="bullet-card">
         <div class="bullet-title">Application Performance</div>
-        <p class="bullet-text">Established company-wide performance standards and observability practices across QuickBooks and TurboTax to achieve TP75 2.5s.</p>
+        <p class="bullet-text">Established company-wide user experience performance standards and observability practices to achieve TP75 2.5s.</p>
+      </div>
+      <div class="bullet-card">
+        <div class="bullet-title">Team Leadership &amp; Talent</div>
+        <p class="bullet-text">Assessing for Awesome (A4A): As a panel assessor in Intuit's calibrated hiring process, interviewed and hired multiple Staff+ engineers and PMs, and championed the promotion of 2 engineers to Senior Staff.</p>
       </div>
     </div>
 
@@ -574,31 +582,35 @@
       </div>
       <div class="patent-item">
         <div class="patent-icon">⚡</div>
-        <div><div class="patent-title">MCP federation for distributed MCP servers</div><div class="patent-num">Patent Pending</div></div>
+        <div><div class="patent-title">MCP Federation for Distributed MCP Servers</div><div class="patent-num">Patent Pending</div></div>
+      </div>
+      <div class="patent-item">
+        <div class="patent-icon">🛠️</div>
+        <div><div class="patent-title">Server-Exposed Skill Tool for Workflow Instructions to Intelligent AI Applications</div><div class="patent-num">Patent Pending</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">🤖</div>
-        <div><div class="patent-title">AI Driven Runtime User Experience Routing</div><div class="patent-num">Patent Pending</div></div>
+        <div><div class="patent-title">AI-Driven Runtime User Experience Routing</div><div class="patent-num">Patent Pending</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">🛡️</div>
-        <div><div class="patent-title">High resiliency content delivery network backup mechanism for micro frontend web applications</div><div class="patent-num">US11411800B1</div></div>
+        <div><div class="patent-title">High-Resiliency CDN Backup Mechanism for Micro-Frontend Web Applications</div><div class="patent-num">US11411800B1</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">📋</div>
-        <div><div class="patent-title">Method and system for data-driven checklist sharing</div><div class="patent-num">US09444860</div></div>
+        <div><div class="patent-title">Method and System for Data-Driven Checklist Sharing</div><div class="patent-num">US09444860</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">📊</div>
-        <div><div class="patent-title">Unified usage tracking mechanism for application</div><div class="patent-num">US8949865B1</div></div>
+        <div><div class="patent-title">Unified Usage Tracking Mechanism for Application</div><div class="patent-num">US8949865B1</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">🔍</div>
-        <div><div class="patent-title">Filtered list assisted element selection</div><div class="patent-num">US7756886</div></div>
+        <div><div class="patent-title">Filtered List Assisted Element Selection</div><div class="patent-num">US7756886</div></div>
       </div>
       <div class="patent-item">
         <div class="patent-icon">💱</div>
-        <div><div class="patent-title">Associating a foreign currency with an accounting object</div><div class="patent-num">US20100082461</div></div>
+        <div><div class="patent-title">Associating a Foreign Currency with an Accounting Object</div><div class="patent-num">US20100082461</div></div>
       </div>
     </div>
   </div>
@@ -613,7 +625,7 @@
       <a class="pub-card" href="https://medium.com/intuit-engineering/web-application-paved-road-a-low-code-approach-ed68c35622f8" target="_blank" rel="noopener">
         <div class="pub-icon">📝</div>
         <div>
-          <div class="pub-title">Web Application Paved Road: A Low Code Approach</div>
+          <div class="pub-title">Web Application Paved Road: A Low-Code Approach</div>
           <div class="pub-link">Read publication →</div>
         </div>
       </a>
